@@ -1,4 +1,36 @@
 .main_logo {
-    height: 10px ;
+    height: 100px ;
     width: auto;
 }
+
+#nav {
+    width: 200px;
+
+}
+
+
+
+
+
+
+
+@media (max-width: 992px) and (min-width: 768px) {
+    .navbar-brand {
+      font-size: 1.8vw;
+    }
+
+    .nav-item {
+        font-size: 1.8vw;
+    }
+}
+
+
+@media (max-width: 767px) {
+    .navbar-brand {
+      font-size: 3.7vw; 
+    }
+}
+
+
+
+
