@@ -4,80 +4,324 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Projet SAÉ : Création d'une Machine Virtuelle et Serveur Web</title>
+  <link rel="stylesheet" href="css/style.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-  <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+
+<body class="bg-light text-dark">
+  <nav class="navbar navbar-expand-md navbar-light fixed-top bg-white border-bottom shadow-sm fs-5">
     <div class="container">
-      <img src="assets/sae_logo.png" alt="Logo principal du site" class="main_logo">
-      <button class="navbar-toggler ms-auto d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+
+      <a class="navbar-brand" href="#">
+        <img src="assets\sae_logo.png" alt="Logo principal du site" class="img-fluid" id="sae_logo">
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <a class="navbar-brand" href="#">
-        <b>Installation d’un poste pour le développement</b>
-      </a>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="#diagramme-de-gant">Diagramme de Gant</a>
-          </li>
+
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
           <li class="nav-item">
             <a class="nav-link" href="#dossier-d-etudes">Dossier d'étude</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#tuto-virtual-box">Tutorial VirtualBox</a>
+            <a class="nav-link" href="#diagramme-de-gant">Diagramme de Gantt</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#tuto-virtual-box">Tutoriel Vidéo</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <div class="container fluid" style="margin-top: 180px;">
-
-    <div id="dossier-d-etudes" class="my-5">
-      <h2>Dossier d'étude</h2>
-      <p>Informations concernant le projet ici.</p>
-    </div>
-    <div id="tuto-virtual-box" class="my-5">
-      <h2>Tutorial VirtualBox</h2>
-      <p>Video de tuto anglais. On peut mettre chacun nos propres tuto.</p>
-    </div>
+  <div class="container" id="dossier-d-etudes">
+    <div class="my-5">
+      <h1 class="text-center mb-4">Dossier d'étude</h1>
+      <div class="row row-cols-2 row-cols-md-3 row-cols-lg-3 g-4"> 
     
-    <div id="diagramme-de-gant" class="my-5">
-      <h1>Diagramme de Gant ou frise chrono</h1>
-      <p>Une table avec bootstrap</p>
-    </div>
+  
+        <div class="col">
+          <div class="card shadow-sm h-100">
+            <div class="card-body">
+              <h5 class="card-title text-center">
+                <a href="/dossier-etude.html#creation_vm" class="text-decoration-none text-dark">
+                  <i class="bi bi-laptop d-block mb-2 icon-size"></i>
+                  Création d’une machine virtuelle
+                </a>
+              </h5>
+            </div>
+          </div>
+        </div>
     
-    <div id="dossier-d-etudes" class="my-5">
-      <h2>Dossier d'étude</h2>
-      <p>Informations concernant le projet ici.</p>
-    </div>
-    <div id="tuto-virtual-box" class="my-5">
-      <h2>Tutorial VirtualBox</h2>
-      <p>Video de tuto anglais. On peut mettre chacun nos propres tuto.</p>
-    </div>
+        <div class="col">
+          <div class="card shadow-sm h-100">
+            <div class="card-body">
+              <h5 class="card-title text-center">
+                <a href="/dossier-etude.html#creation-su" class="text-decoration-none text-dark">
+                  <i class="bi bi-person-lock d-block mb-2 icon-size"></i>
+                  Création d’un compte administrateur
+                </a>
+              </h5>
+            </div>
+          </div>
+        </div>
     
-    <div id="diagramme-de-gant" class="my-5">
-      <h1>Diagramme de Gant ou frise chrono</h1>
-      <p>Une table avec bootstrap</p>
-    </div>
-  </div>
 
   
+        <div class="col">
+          <div class="card shadow-sm h-100">
+            <div class="card-body">
+              <h5 class="card-title text-center">
+                <a href="/dossier-etude.html#group-creation" class="text-decoration-none text-dark">
+                  <i class="bi bi-person-circle d-block mb-2 icon-size"></i>
+                  Création d’un groupe
+                </a>
+              </h5>
+            </div>
+          </div>
+        </div>
+    
+        <div class="col">
+          <div class="card shadow-sm h-100">
+            <div class="card-body">
+              <h5 class="card-title text-center">
+                <a href="/dossier-etude.html#prompt-custom" class="text-decoration-none text-dark">
+                  <i class="bi bi-terminal d-block mb-2 icon-size"></i>
+                  Personnalisation du prompt
+                </a>
+              </h5>
+            </div>
+          </div>
+        </div>
+    
+        <div class="col">
+          <div class="card shadow-sm h-100">
+            <div class="card-body">
+              <h5 class="card-title text-center">
+                <a href="/dossier-etude.html#web-service" class="text-decoration-none text-dark">
+                  <i class="bi bi-cloud-arrow-up d-block mb-2 icon-size"></i>
+                  Installation d’un service web
+                </a>
+              </h5>
+            </div>
+          </div>
+        </div>
+    
+      </div>
+    </div>
 
-  <footer class="bg-dark text-white py-4">
+
+    <div id="diagramme-de-gant" class="my-5">
+      <div class="container my-5">
+        <h1 class="text-center mb-4">Diagramme de Gantt du travail de la période B</h1>
+      
+        <div class="table-responsive">
+          <table class="table table-bordered table-striped">
+            <thead class="table-dark">
+              <tr>
+                <th scope="col" class="text-center" >Tâches/Semaines</th>
+                <th scope="col" class="text-center" >S1-B1</th>
+                <th scope="col" class="text-center" >S1-B2</th>
+                <th scope="col" class="text-center" >S1-B3</th>
+                <th scope="col" class="text-center" >S1-B4</th>
+                <th scope="col" class="text-center" >S1-B5</th>
+                <th scope="col" class="text-center" >S1-B6</th>
+                <th scope="col" class="text-center" >S1-B7</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="align-middle">
+                <td class="text-start"><strong>Présentation du projet</strong></td>
+                <td class="bg-success"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+      
+              <tr class="align-middle">
+                <td class="text-start"><strong>Création d’une machine virtuelle</strong></td>
+                <td></td>
+                <td class="bg-primary"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+      
+              <tr class="align-middle">
+                <td class="text-start"><strong>Création d’un compte administrateur</strong></td>
+                <td></td>
+                <td></td>
+                <td class="bg-info"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+      
+              <tr class="align-middle">
+                <td class="text-start"><strong>Création de deux utilisateurs</strong></td>
+                <td></td>
+                <td></td>
+                <td class="bg-info"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+      
+              <tr class="align-middle">
+                <td class="text-start"><strong>Création d’un groupe</strong></td>
+                <td></td>
+                <td></td>
+                <td class="bg-info"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+      
+              <tr class="align-middle">
+                <td class="text-start"><strong>Personnalisation du prompt</strong></td>
+                <td></td>
+                <td></td>
+                <td class="bg-info"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+      
+              <tr class="align-middle">
+                <td class="text-start"><strong>Installation d’un service web</strong></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="bg-danger"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+      
+              <tr class="align-middle">
+                <td class="text-start"><strong>Configuration de WebStorm</strong></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="bg-danger"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+      
+              <tr class="align-middle">
+                <td class="text-start"><strong>Réalisation des pages HTML/CSS</strong></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="bg-warning"></td>
+                <td class="bg-warning"></td>
+                <td></td>
+              </tr>
+      
+              <tr class="align-middle">
+                <td class="text-start"><strong>Évaluation du travail</strong></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="bg-secondary"></td>
+              </tr>
+      
+            </tbody>
+          </table>
+        </div>
+      
+      </div>
+    </div>
+
+    <div id="tuto-virtual-box" class="my-5">
+      <h1 class="text-center mb-4">Tutorial Virtual Machine</h1>
+    
+      <div id="carouselExample1" class="carousel slide shadow-lg">
+        <div class="carousel-inner shadow-lg">
+          <div class="carousel-item active">
+            <video class="d-block w-100 rounded" controls>
+              <source src="assets\videos\SAE-S103-SIVASEKARAN.mp4" type="video/mp4">
+              Votre navigateur n'est pas compatible avec cette vidéo.
+            </video>
+          </div>
+          <div class="carousel-item">
+            <video class="d-block w-100 rounded" controls>
+              <source src="assets\videos\SAE-S103-CHANDRA.mp4" type="video/mp4">
+              Votre navigateur n'est pas compatible avec cette vidéo.
+            </video>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample1" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">precédent</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample1" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">suivant</span>
+        </button>
+      </div>
+    </div>
+    
+
+  </div>
+
+
+
+
+  
+  <footer class="bg-white text-dark py-5 border-top shadow-sm">
     <div class="container text-center">
-      <p class="mb-10">&copy; 2025 Équipe X. Tous droits réservés.</p>
-      <div>
-        <a href="#" class="text-white me-3 text-decoration-none"><i class="bi bi-facebook"></i> Facebook</a>
-        <a href="#" class="text-white me-3 text-decoration-none"><i class="bi bi-twitter"></i> Twitter</a>
-        <a href="#" class="text-white me-3 text-decoration-none"><i class="bi bi-instagram"></i> Instagram</a>
+      <div class="row">
+        <div class="col-12 col-md-4 mb-3">
+          <h5>À propos</h5>
+          <p>Un site web développé par Aswin Sivasekaran, Niloy Chandra, Cyril Nguyen et Gaël Kervinio du groupe 110 pour la SAE S1.03.</p>
+        </div>
+  
+        <div class="col-12 col-md-8">
+          <div class="row">
+            <div class="col-6 mb-3">
+              <img src="assets\logoIUT.png" alt="Logo SAE" class="img-fluid mx-auto d-block" style="max-width: 200px; height: auto;">
+            </div>
+  
+            <div class="col-6 mb-3">
+              <h5>Nous contacter</h5>
+              <i class="bi bi-envelope"></i> <a href="mailto:contact@sae-project.com" class="text-dark text-decoration-none">contact@sae.com</a><br>
+              <i class="bi bi-phone">07 23 45 67 89</i>
+              <div>
+                <a href="https://www.facebook.com/sae" class="text-dark me-3 text-decoration-none" target="_blank"><i class="bi bi-facebook"></i></a>
+                <a href="https://www.x.com/sae" class="text-dark me-3 text-decoration-none" target="_blank"><i class="bi bi-twitter"></i></a>
+                <a href="https://www.instagram.com/sae" class="text-dark me-3 text-decoration-none" target="_blank"><i class="bi bi-instagram"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-3">
+        <p class="mb-0">&copy; 2025 Équipe G4. Tout droit réservé.</p>
       </div>
     </div>
   </footer>
+  
+  
+  
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

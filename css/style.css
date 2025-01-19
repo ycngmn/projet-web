@@ -1,36 +1,29 @@
-.main_logo {
-    height: 100px ;
-    width: auto;
+html {
+  scroll-padding-top: 150px;
 }
 
-#nav {
-    width: 200px;
-
+#sae_logo {
+  height: 80px;
+  width: auto;
 }
 
-
-
-
-
-
-
-@media (max-width: 992px) and (min-width: 768px) {
-    .navbar-brand {
-      font-size: 2vw;
-    }
-
-    .nav-item {
-        font-size: 1.5vw;
-    }
+#dossier-d-etudes, main {
+  margin-top: 150px;
 }
 
 
-@media (max-width: 767px) {
-    .navbar-brand {
-      font-size: 3.7vw; 
-    }
+.icon-size {
+  font-size: 2rem;
 }
 
+.card-body .mb-2 {
+  margin-bottom: 0.5rem;
+}
 
-
+#carouselExample1 .carousel-control-prev,
+#carouselExample1 .carousel-control-next {
+  position: absolute;
+  top: 50%; 
+  transform: translateY(-50%);
+}
 

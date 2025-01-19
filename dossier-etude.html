@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projet SAÉ : Création d'une Machine Virtuelle et Serveur Web</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+
+<body class="bg-light text-dark">
+  <nav class="navbar navbar-expand-md navbar-light fixed-top bg-white border-bottom shadow-sm fs-5">
+    <div class="container">
+
+      <a class="navbar-brand" href="/">
+        <img src="assets/sae_logo.png" alt="Logo principal du site" class="img-fluid" id="sae_logo">
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="/">Accueil</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#table_des_matieres">Table des matières</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  <main class="container py-5">
+
+      <table class="table table-bordered table-hover table-sm align-middle fs-5" id="table_des_matieres">
+          <thead class="table-dark">
+              <tr>
+                  <th scope="col" class="text-center">#</th>
+                  <th scope="col">Table des matières</th>
+              </tr>
+          </thead>
+          <tbody>
+             
+              <tr>
+                  <td class="text-center">1</td>
+                  <td><a href="#creation_vm" class="text-decoration-none text-black">Création d’une machine virtuelle</a></td>
+              </tr>
+              <tr>
+                  <td class="text-center">2</td>
+                  <td><a href="#creation-su" class="text-decoration-none text-black">Création d’un compte administrateur</a></td>
+              </tr>
+              <tr>
+                  <td class="text-center">3</td>
+                  <td><a href="#group-creation" class="text-decoration-none text-black">Création d’un groupe</a></td>
+              </tr>
+              <tr>
+                  <td class="text-center">4</td>
+                  <td><a href="#prompt-custom" class="text-decoration-none text-black">Personnalisation de l’invite de commande</a></td>
+              </tr>
+              <tr>
+                  <td class="text-center">5</td>
+                  <td><a href="#web-service" class="text-decoration-none text-black">Installation d’un service web</a></td>
+              </tr>
+          </tbody>
+      </table>
+
+    <h1 class="text-center mt-5 mb-5" id = "creation_vm"><i class="bi bi-laptop"></i> Création d'une machine virtuelle</h1>
+
+    
+    <section class="row border rounded p-3 mb-4 bg-white">
+      <header class="col-12 mb-2">
+        <h4 class="text-primary fs-3">1. Téléchargement des outils</h4>
+      </header>
+      <article class="col-md-6 text-center">
+        <img src="assets/1_creation/telechargement_virtualbox.png" alt="Action Image 1" class="img-fluid border rounded mb-2">
+        <p class="fs-5">Nous avons téléchargé et installé <strong>VirtualBox</strong>. C'est un hyperviseur gratuit, open source et largement utilisé pour la virtualisation.</p>
+      </article>
+      <article class="col-md-6 text-center">
+        <img src="assets/1_creation/telecharge_ubuntu.png" alt="Justification Image 1" class="img-fluid border rounded mb-2">
+        <p class="fs-5">Ensuite, nous avons récupéré l’image ISO d’Ubuntu. Ubuntu est une <strong>distribution Linux</strong> populaire, réputée pour sa stabilité.</p>
+      </article>
+    </section>
+
+    
+    <section class="row border rounded p-3 mb-4 bg-white">
+      <header class="col-12 mb-2">
+        <h4 class="text-secondary fs-3"> 2. Création d'une nouvelle machine virtuelle</h4>
+      </header>
+      <article class="col-md-6 text-center">
+        <img src="assets\1_creation\creation_virtualbox_1.png" alt="création_vm_e1" class="img-fluid border rounded mb-2">
+        <p class="fs-5">Dans VirtualBox, nous avons nommé la machine virtuelle "MonVM" et défini le répertoire où elle serait stockée. La sélectionne de l'image ISO d'Ubuntu a permis de configurer automatiquement les paramètres de type, sous-type et version.</p>
+      </article>
+      <article class="col-md-6 text-center">
+        <img src="assets\1_creation\création_virtualBox_2.png" alt="création_vm_img_2" class="img-fluid border rounded mb-2">
+        <p class="fs-5">Nous avons laissé les paramètres par défaut pour l'option "Installation sans intervention" car nous voulions effectuer une installation standard.</p>
+      </article>
+    </section>
+
+    
+    <section class="row border rounded p-3 mb-4 bg-white">
+      <header class="col-12 mb-2">
+        <h4 class="text-secondary fs-3">3. Configuration des ressources matérielles</h4>
+      </header>
+      <article class="col-md-6 text-center">
+        <img src="assets\1_creation\config_ressource_1.png" alt="allocation_ressources_mv" class="img-fluid border rounded mb-2">
+        <p class="fs-5"> Nous avons alloué <strong>4 Go de RAM</strong> (12.5% de la machine hôte) et 2 sur les 24 cœurs de processeur disponibles à la machine virtuelle.</p>
+      </article>
+      <article class="col-md-6 text-center">
+        <img src="assets\1_creation\config_ressource_2.png" alt="allocation_stockage_mv" class="img-fluid border rounded mb-2">
+        <p class="fs-5">Nous avons attribué <strong>20 Go d'espace de stockage</strong> à la machine virtuelle en choisissant le type de fichier disque dur VDI (Virtual Disk Image), Le format natif pour VirtualBox.</p>
+      </article>
+    </section>
+
+   
+    <section class="row border rounded p-3 mb-4 bg-white">
+      <header class="col-12 mb-2">
+        <h4 class="text-success fs-3">4. Démarrage et installation d'Ubuntu</h4>
+      </header>
+      <article class="col-md-6 text-center">
+        <img src="assets\1_creation\demarrage_mv_1.png" alt="demmarage_mv_1" class="img-fluid border rounded mb-2">
+        <p class="fs-5"> Après avoir démarré la machine virtuelle, nous avons suivi le processus d’installation d'Ubuntu. Cela inclut la sélection de la langue et la configuration de l’utilisateur.</p>
+      </article>
+      <article class="col-md-6 text-center">
+        <img src="assets\1_creation\demarrage_mv_2.png" alt="demarrage_mv_2" class="img-fluid border rounded mb-2">
+        <p class="fs-5">Ubuntu a été installé sur notre MV après quelques minutes de chargement. .</p>
+      </article>
+    </section>
+
+    <br>
+    <h1 class="text-center mt-5 mb-5" id = "creation-su"><i class="bi bi-person-lock"></i> Création d’un compte administrateur</h1>
+
+    <section class="row border rounded p-3 mb-4 bg-white">
+      <header class="col-12 mb-2">
+        <h4 class="text-primary fs-3">1. Ouverture du terminal et passage en mode root</h4>
+      </header>
+      <article class="col-md-6 text-center">
+        <img src="assets/2_utilisation/img_terminal.png" alt="ouverture_terminal_img" class="img-fluid border rounded mb-2">
+        <p class="fs-5">Nous avons d'abord ouvert le terminal sous Ubuntu.</p>
+      </article>
+      <article class="col-md-6 text-center">
+        <img src="assets/2_utilisation/img_terminal_2.png" alt="demarrage_terminal_su_2" class="img-fluid border rounded mb-2">
+        <p class="fs-5">Nous sommes passés en mode superutilisateur (root) en utilisant la commande <code>sudo -i</code> pour ne pas avoir à répéter sudo, puis avons mis à jour les paquets en utilisant <code>apt update && apt upgrade</code>.</p>
+      </article>
+    </section>
+
+    <section class="row border rounded p-3 mb-4 bg-white">
+      <header class="col-12 mb-2">
+        <h4 class="text-success fs-3">2. Ajout de l’utilisateur au groupe "sudo"</h4>
+      </header>
+      <article class="col-md-6 text-center">
+        <img src="assets/2_utilisation/img_addusr.png" alt="terminal_commade_ajoute_usr" class="img-fluid border rounded mb-2">
+        <p class="fs-5">Nous avons utilisé la commande <code>adduser admin_Gr10_Binome04</code>
+          pour créer un compte individuel avant de lui attribuer des privilèges administratifs.</p>
+      </article>
+      <article class="col-md-6 text-center">
+        <img src="assets/2_utilisation/img_usrmod.png" alt="terminal_ajoute_au_grp_su" class="img-fluid border rounded mb-2">
+        <p class="fs-5">Pour donner des privilèges administratifs au nouvel utilisateur, nous avons utilisé la commande 
+          <code>usermod -aG sudo admin_Gr10_Binome04</code>
+          Cela ajoute l’utilisateur au groupe <strong>"sudo"</strong>. Nous avons testé si le nouvel utilisateur dispose bien des droits administratifs en exécutant la commande <code>cat /etc/group | grep sudo</code></p>
+      </article>
+    </section>
+
+    <br>
+    <h1 class="text-center mt-5 mb-5" id = "group-creation"><i class="bi bi-person-circle"></i> Création d’un groupe</h1>
+
+    <section class="row border rounded p-3 mb-4 bg-white">
+      <header class="col-12 mb-2">
+        <h4 class="text-primary fs-3">1. Création de deux utilisateurs et un groupe</h4>
+      </header>
+      <article class="col-md-6 text-center">
+        <img src="assets/3_groupe/img_addusr_binome.png" alt="demarrage_terminal_su_2" class="img-fluid border rounded mb-2">
+        <p class="fs-5">Nous avons utilisé la commande <code>adduser Binome04_1</code> et <code>adduser Binome04_2</code>
+          pour créer deux nouveaux utilisateurs.</p>
+      </article>
+      <article class="col-md-6 text-center">
+        <img src="assets/3_groupe/img_grouadd.png" alt="ouverture_terminal_img" class="img-fluid border rounded mb-2">
+        <p class="fs-5">Pour créer un nouveau groupe, nous avons utilisé la commande:
+          <code>groupadd Binome04</code>.
+          Cette commande permet de créer un groupe avec le nom spécifié.</p>
+      </article>
+    </section>
+
+    <section class="row border rounded p-3 mb-4 bg-white">
+      <header class="col-12 mb-2">
+        <h4 class="text-success fs-3">2. Ajout au groupe et vérification</h4>
+      </header>
+      <article class="col-md-6 text-center">
+        <img src="assets/3_groupe/img_usermod.png" alt="ajoute_usrs_a_group" class="img-fluid border rounded mb-2">
+        <p class="fs-5">Pour ajouter les utilisateurs existants au nouveau groupe, on a utilisé : <br>
+          <code>usermod -aG Binome04 Binome04_1</code> et
+          <code>usermod -aG Binome04 Binome04_2</code>
+        </p>
+      </article>
+      <article class="col-md-6 text-center">
+        <img src="assets\3_groupe\img_group.png" alt="verifie_ajoute_groupe" class="img-fluid border rounded mb-2">
+        <p class="fs-5">Nous avons vérifié si l’utilisateur a bien été ajouté au groupe avec : <br>
+          <code>groups Binome04_1</code> et
+          <code>groups Binome04_2</code>
+        </p>
+      </article>
+    </section>
+
+    <br>
+    <h1 class="text-center mt-5 mb-5" id = "prompt-custom"><i class="bi bi-terminal"></i> Personnalisation d’une invite de commande (prompt)</h1>
+
+    <section class="row border rounded p-3 mb-4 bg-white">
+      <header class="col-12 mb-2">
+          <h4 class="text-success fs-3">1. Affichage du nom dans le prompt</h4>
+      </header>
+      <article class="col-md-6 text-center">
+        <img src="assets\4_prompt\img_nano.png" alt="verifie_ajoute_groupe" class="img-fluid border rounded mb-2">
+          <p class="fs-5">
+              Modifions le fichier <code>~/.bashrc</code> avec : <code>nano ~/.bashrc</code>. <br>
+              Ajoutons à la fin : <code>PS1='\u@\h:\w\$'</code>.
+          </p>
+      </article>
+      <article class="col-md-6 text-center">
+        <img src="assets/4_prompt/img_resultat.png" alt="verifie_ajoute_groupe" class="img-fluid border rounded mb-2">
+          <p class="fs-5">
+              Rechargeons avec : <code>source ~/.bashrc</code>. <br>
+              Le prompt affiche l’utilisateur, l’hôte et le répertoire courant.
+          </p>
+      </article>
+  </section>
+
+  <br>
+    <h1 class="text-center mt-5 mb-5" id = "web-service"><i class="bi bi-cloud-arrow-up"></i>Installation et configuration d'un service web</h1>
+
+<section class="row border rounded p-3 mb-4 bg-white">
+  <header class="col-12 mb-2">
+    <h4 class="text-success fs-3">1. Configuration réseau</h4>
+  </header>
+  <article class="col-md-6 text-center">
+    <img src="assets/5_serveur/serveur1.png" alt="nat_to_pont" class="img-fluid border rounded mb-2">
+    <p class="fs-5">
+      Changeons le mode réseau de la machine virtuelle de NAT à Accès par Pont dans les paramètres réseau de VirtualBox.
+    </p>
+  </article>
+  <article class="col-md-6 text-center">
+    <img src="assets/5_serveur/serveur2.png" alt="ip_vm" class="img-fluid border rounded mb-2">
+    <p class="fs-5">
+      Utilisons la commande <code>ip addr show</code> pour obtenir l’adresse IP de la machine virtuelle. Notez l’adresse affichée sous l’interface active.
+    </p>
+  </article>
+</section>
+
+<section class="row border rounded p-3 mb-4 bg-white">
+  <header class="col-12 mb-2">
+    <h4 class="text-success fs-3">2. Configuration SSH</h4>
+  </header>
+  <article class="col-md-6 text-center">
+    <img src="assets/5_serveur/serveur3.png" alt="install_openssh" class="img-fluid border rounded mb-2">
+    <p class="fs-5">
+      Installons le serveur OpenSSH avec : <code>sudo apt install openssh-server</code>.
+    </p>
+  </article>
+  <article class="col-md-6 text-center">
+    <img src="assets/5_serveur/serveur4.png" alt="config_ssh" class="img-fluid border rounded mb-2">
+    <p class="fs-5">
+      Configurons SSH en modifiant le fichier <code>/etc/ssh/sshd_config</code>, puis redémarrons le service avec : <code>sudo systemctl restart ssh</code>.
+    </p>
+  </article>
+</section>
+
+
+<section class="row border rounded p-3 mb-4 bg-white">
+  <header class="col-12 mb-2">
+    <h4 class="text-success fs-3">3. Transfert des fichiers en utilisant SSH</h4>
+  </header>
+  <article class="col-md-6 text-center">
+    <img src="assets/5_serveur/serveur8.png" alt="scp_command" class="img-fluid border rounded mb-2">
+    <p class="fs-5">
+      Transférons notre dossier site web vers la machine virtuelle.
+    </p>
+  </article>
+  <article class="col-md-6 text-center">
+    <img src="assets/5_serveur/serveur9.png" alt="verification_scp" class="img-fluid border rounded mb-2">
+    <p class="fs-5">
+      Vérifions que le dossier est bien transféré avec la commande <code>ls</code> sur la machine.
+    </p>
+  </article>
+</section>
+
+
+<section class="row border rounded p-3 mb-4 bg-white">
+  <header class="col-12 mb-2">
+    <h4 class="text-success fs-3">4. Installation et configuration Apache2</h4>
+  </header>
+  <article class="col-md-6 text-center">
+    <img src="assets/5_serveur/serveur10.png" alt="install_apache2" class="img-fluid border rounded mb-2">
+    <p class="fs-5">
+      Installons Apache2 avec : <code>sudo apt install apache2</code>.
+    </p>
+  </article>
+  <article class="col-md-6 text-center">
+    <img src="assets/5_serveur/serveur12.png" alt="config_apache2" class="img-fluid border rounded mb-2">
+    <p class="fs-5">
+      Modifions les fichiers de configuration, puis redémarrons Apache avec : <code>sudo systemctl reload apache2</code>.
+    </p>
+  </article>
+</section>
+
+
+<section class="row border rounded p-3 mb-4 bg-white">
+  <header class="col-12 mb-2">
+    <h4 class="text-success fs-3">5. Résultat</h4>
+  </header>
+  <article class="col-12 text-center">
+    <img src="assets/5_serveur/resultat.png" alt="resultat_final" class="img-fluid border rounded mb-2">
+    <p class="fs-5">
+      Accédons au site web hébergé sur la machine en saisissant son adresse IP dans un navigateur.
+    </p>
+  </article>
+</section>
+
+
+  
+
+
+</main>
+
+
+
+  
+<footer class="bg-white text-dark py-5 border-top shadow-sm">
+  <div class="container text-center">
+    <div class="row">
+      <div class="col-12 col-md-4 mb-3">
+        <h5>À propos</h5>
+        <p>Un site web développé par Aswin Sivasekaran, Niloy Chandra, Cyril Nguyen et Gaël Kervinio du groupe 110 pour la SAE S1.03.</p>
+      </div>
+
+      <div class="col-12 col-md-8">
+        <div class="row">
+          <div class="col-6 mb-3">
+            <img src="assets\logoIUT.png" alt="Logo SAE" class="img-fluid mx-auto d-block" style="max-width: 200px; height: auto;">
+          </div>
+
+          <div class="col-6 mb-3">
+            <h5>Nous contacter</h5>
+            <i class="bi bi-envelope"></i> <a href="mailto:contact@sae-project.com" class="text-dark text-decoration-none">contact@sae.com</a><br>
+            <i class="bi bi-phone">07 23 45 67 89</i>
+            <div>
+              <a href="https://www.facebook.com/sae" class="text-dark me-3 text-decoration-none" target="_blank"><i class="bi bi-facebook"></i></a>
+              <a href="https://www.x.com/sae" class="text-dark me-3 text-decoration-none" target="_blank"><i class="bi bi-twitter"></i></a>
+              <a href="https://www.instagram.com/sae" class="text-dark me-3 text-decoration-none" target="_blank"><i class="bi bi-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="text-center mt-3">
+      <p class="mb-0">&copy; 2025 Équipe G-04. Tout droit réservé.</p>
+    </div>
+  </div>
+</footer>
+  
+  
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
